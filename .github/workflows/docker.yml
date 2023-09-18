@@ -27,6 +27,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: metadonors/riseact-app-template-node:latest
+          tags: metadonors/riseact-app-graphql-explorer:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
