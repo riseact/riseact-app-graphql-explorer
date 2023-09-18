@@ -3,7 +3,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express, { Express } from "express";
 import http from "http";
-import serveStatic from "serve-static";
 // var buildClientSchema  = require('graphql/utilities').buildClientSchema;
 // var introspectionQuery = require('graphql/utilities').introspectionQuery;
 
@@ -19,6 +18,7 @@ async function createServer() {
     auth: {
       clientId: process.env.CLIENT_ID!,
       clientSecret: process.env.CLIENT_SECRET!,
+      redirectUri: process.env.REDIRECT_URI!,
     },
   });
 
