@@ -1,0 +1,31 @@
+{
+  "name": "riseact-app-grapql-explorer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node  --project tsconfig.json ./src/index.ts",
+    "watch": "nodemon --ext .ts --watch ./src --exec 'npm run dev'",
+    "build": "rimraf -rf ./build && npm exec tsc",
+    "start": "cross-env NODE_ENV=production node ./build/index.js",
+    "start:local": "cross-env NODE_ENV=production ts-node --project tsconfig.json ./src/index.ts",
+    "start:tunnel": "ngrok http 3000 --region eu"
+  },
+  "dependencies": {
+    "@riseact/riseact-node-sdk": "^2.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "serve-static": "^1.15.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/http-proxy": "^1.17.10",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.21",
+    "rimraf": "^4.4.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  }
+}
